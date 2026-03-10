@@ -7,14 +7,15 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 DataProcessor pr = new DataProcessor(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
 Console.WriteLine("=== 원본 배열 출력 ===");
 pr.ForEach(x => Console.Write($"{x}, "));
+
 Console.WriteLine("\n\n=== 2배로 변환 ===");
 pr.Transform(x => x * 2);
  
 
 Console.WriteLine("\n\n=== 짝수만 필터링 ===");
 pr.Filter(x => x % 2 == 0);
+
 Console.WriteLine("\n\n=== 합계 계산 ===");
-pr.Reduce((acc, x) => acc + x, 0);
 Console.WriteLine($"합계: {pr.Reduce((acc, x) => acc + x, 0)}");
 
 
